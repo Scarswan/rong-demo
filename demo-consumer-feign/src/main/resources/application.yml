@@ -1,0 +1,11 @@
+server:
+  port: 8889
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8890/eureka/
+
+spring:
+  application:
+    name: demo-consumer-feign

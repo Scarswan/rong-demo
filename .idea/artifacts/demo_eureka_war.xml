@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="demo-eureka:war">
+    <output-path>$PROJECT_DIR$/demo-eureka/target</output-path>
+    <root id="archive" name="demo-eureka-0.0.1-SNAPSHOT.jar" />
+  </artifact>
+</component>

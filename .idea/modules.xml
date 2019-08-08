@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Demo.iml" filepath="$PROJECT_DIR$/Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-p2/controller/controller.iml" filepath="$PROJECT_DIR$/demo-p2/controller/controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-p2/dao/dao.iml" filepath="$PROJECT_DIR$/demo-p2/dao/dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-consumer-feign/demo-consumer-feign.iml" filepath="$PROJECT_DIR$/demo-consumer-feign/demo-consumer-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-consumer-ribbon/demo-consumer-ribbon.iml" filepath="$PROJECT_DIR$/demo-consumer-ribbon/demo-consumer-ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-eureka/demo-eureka.iml" filepath="$PROJECT_DIR$/demo-eureka/demo-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-model/demo-model.iml" filepath="$PROJECT_DIR$/demo-model/demo-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-p2/demo-p2.iml" filepath="$PROJECT_DIR$/demo-p2/demo-p2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-provider/demo-provider.iml" filepath="$PROJECT_DIR$/demo-provider/demo-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-provider/demo-provider-controller/demo-provider-controller.iml" filepath="$PROJECT_DIR$/demo-provider/demo-provider-controller/demo-provider-controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-provider/demo-provider-dao/demo-provider-dao.iml" filepath="$PROJECT_DIR$/demo-provider/demo-provider-dao/demo-provider-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-provider/demo-provider-service/demo-provider-service.iml" filepath="$PROJECT_DIR$/demo-provider/demo-provider-service/demo-provider-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-root/demo-root.iml" filepath="$PROJECT_DIR$/demo-root/demo-root.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo-p2/service/service.iml" filepath="$PROJECT_DIR$/demo-p2/service/service.iml" />
+    </modules>
+  </component>
+</project>

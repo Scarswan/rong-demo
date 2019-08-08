@@ -1,0 +1,15 @@
+
+# 单例配置
+spring:
+  application:
+    name: demo-eureka
+server:
+  port: 8890
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8890/eureka/

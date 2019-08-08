@@ -1,0 +1,20 @@
+server:
+  port: 8888
+
+
+spring:
+  application:
+    name: demo-p2
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8
+    driverclassname: com.mysql.jdbc.Driver
+    username: root
+    password:
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8890/eureka/
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

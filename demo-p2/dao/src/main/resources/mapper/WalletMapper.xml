@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.p2.mapper.WalletMapper">
+
+    <sql id="Wallet_Column_As">
+      wallet_id As WalletId, wallet_balance As WalletBalance, wallet_consumption As WalletConsumption, user_id AS UserId, create_time AS CreateTime
+    </sql>
+
+    <select id="selectById" resultType="com.demo.model.test.Wallet">
+        select
+        <include refid="Wallet_Column_As"/>
+        from t_wallet
+        where user_id = #{userId}
+    </select>
+
+</mapper>

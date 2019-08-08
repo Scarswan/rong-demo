@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.p2.mapper.NewsMapper">
+
+    <resultMap id="NewsResultMap" type="com.demo.model.test.News">
+        <id column="e_id" property="EId" jdbcType="INTEGER"/>
+        <result column="e_title" property="ETitle" jdbcType="VARCHAR"/>
+        <result column="e_content" property="EContent" jdbcType="LONGVARCHAR"/>
+        <result column="e_desc" property="EDesc" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="News_Column_List">
+    e_id, e_title, e_content, e_desc, create_time
+  </sql>
+
+    <insert id="insert">
+
+    </insert>
+
+
+</mapper>

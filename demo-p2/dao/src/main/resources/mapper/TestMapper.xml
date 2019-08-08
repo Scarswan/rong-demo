@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.p2.mapper.TestMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.model.BankNode">
+        <id column="node_code" property="nodeCode" jdbcType="VARCHAR"/>
+        <result column="node_state" property="nodeState" jdbcType="VARCHAR"/>
+        <result column="bank_no" property="bankNo" jdbcType="VARCHAR"/>
+        <result column="city_code" property="cityCode" jdbcType="VARCHAR"/>
+        <result column="node_name" property="nodeName" jdbcType="VARCHAR"/>
+        <result column="hq_name" property="hqName" jdbcType="VARCHAR"/>
+        <result column="hq_node_code" property="hqNodeCode" jdbcType="VARCHAR"/>
+        <result column="super_code_flag" property="superCodeFlag" jdbcType="INTEGER"/>
+        <result column="bank_type" property="bankType" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="ALIAS_Column_List">
+    bn.node_code, bn.node_state, bn.bank_no, bn.city_code, bn.node_name, bn.bank_type, bn.create_time, bn.update_time
+  </sql>
+
+    <sql id="Base_Column_List">
+    node_code, node_state, bank_no, city_code, node_name, hq_name, hq_node_code, super_code_flag,
+    bank_type, create_time, update_time
+  </sql>
+
+    <select id="selectAndList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_bank_node
+        where 1=1
+        <if test="nodeNameList != null and nodeNameList.size() gt 0">
+            <foreach collection="nodeNameList" item="item" index="index">
+                and node_name like #{item,jdbcType=VARCHAR}
+            </foreach>
+        </if>
+        <if test="nodeCode != null and nodeCode !=''">
+            and node_code = #{nodeCode}
+        </if>
+        <if test="BankNo != null and BankNo !=''">
+            and bank_no= #{BankNo}
+        </if>
+    </select>
+
+
+</mapper>

@@ -1,0 +1,22 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000  #设置API网关中路由转发请求的HystrixCommand执行超时时间
+ribbon:
+  ConnectTimeout: 3000 #设置路由转发请求的时候，创建请求连接的超时时间
+  ReadTimeout: 60000  #用来设置路由转发请求的超时时间
+
+server:
+  port: 9527
+
+spring:
+  application:
+    name: demo-zuul
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8890/eureka/

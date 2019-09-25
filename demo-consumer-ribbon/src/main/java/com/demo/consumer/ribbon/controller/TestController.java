@@ -24,7 +24,7 @@ public class TestController {
     public String queryNos(@RequestBody String param) {
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> formEntity = new HttpEntity<String>(param.toString(), headers);
-        return restTemplate.postForObject("http://demo-p2/test/hello" , formEntity, String.class);
+        return restTemplate.postForObject("http://demo-p2/test/hello", formEntity, String.class);
     }
 
     @RequestMapping(value = "/query/nos", method = RequestMethod.POST)
@@ -32,7 +32,7 @@ public class TestController {
         HttpHeaders headers = new HttpHeaders();
         HttpEntity<QueryUnionBankRequest> formEntity = new HttpEntity<QueryUnionBankRequest>(request, headers);
 
-        return restTemplate.postForObject("http://demo-p2/test/query/nos" , formEntity, List.class);
+        return restTemplate.postForObject("http://demo-p2/test/query/nos", formEntity, List.class);
     }
 
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.p2.mapper.MQConsumerMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.model.rocketmq.RMQConsumer">
+        <id column="c_id" property="cID" jdbcType="INTEGER"/>
+        <result column="c_m_id" property="cMID" jdbcType="INTEGER"/>
+        <result column="c_count" property="cCount" jdbcType="INTEGER"/>
+        <result column="c_max_count" property="cMaxCount" jdbcType="INTEGER"/>
+        <result column="c_status" property="cStatus" jdbcType="VARCHAR"/>
+        <result column="transaction_id" property="transactionID" jdbcType="VARCHAR"/>
+        <result column="m_topic" property="mTopic" jdbcType="VARCHAR"/>
+        <result column="m_consumer_group" property="mConsumerGroup" jdbcType="VARCHAR"/>
+        <result column="m_tags" property="mTags" jdbcType="VARCHAR"/>
+        <result column="is_delete" property="isDelete" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+         c_m_id, c_count, c_max_count, c_status, transaction_id, m_topic, m_consumer_group, m_tags,
+        is_delete, create_time, update_time
+    </sql>
+
+    <insert id="insertSelective" useGeneratedKeys="true" keyColumn="c_id" keyProperty="cID" parameterType="com.demo.model.rocketmq.RMQConsumer">
+        insert into
+        t_rocketmq_consumer(<include refid="Base_Column_List"/>)
+        values (
+        #{cMID},
+        #{cCount}, #{cMaxCount},
+        #{cStatus}, #{transactionID},
+        #{mTopic}, #{mConsumerGroup}
+        #{mTags}, #{isDelete},
+        #{createTime}, #{updateTime}
+        )
+    </insert>
+
+    <select id="selectByMessage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_rocketmq_consumer
+        where c_m_id = #{cMID,jdbcType=INTEGER} AND m_consumer_group = #{mConsumerGroup,jdbcType=VARCHAR}
+    </select>
+
+
+</mapper>

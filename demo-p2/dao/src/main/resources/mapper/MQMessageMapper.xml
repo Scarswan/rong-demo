@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.p2.mapper.MQMessageMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.model.rocketmq.RMQMessage">
+        <id column="m_id" property="mID" jdbcType="INTEGER"/>
+        <result column="m_topic" property="mTopic" jdbcType="VARCHAR"/>
+        <result column="m_tags" property="mTags" jdbcType="VARCHAR"/>
+        <result column="m_keys" property="mKeys" jdbcType="VARCHAR"/>
+        <result column="m_body" property="mBody" jdbcType="VARCHAR"/>
+        <result column="m_status" property="mStatus" jdbcType="CHAR"/>
+        <result column="m_producer_group" property="mProducerGroup" jdbcType="VARCHAR"/>
+        <result column="send_count" property="sendCount" jdbcType="INTEGER"/>
+        <result column="send_result" property="sendResult" jdbcType="VARCHAR"/>
+        <result column="max_retry_count" property="maxRetryCount" jdbcType="INTEGER"/>
+        <result column="transaction_id" property="transactionID" jdbcType="VARCHAR"/>
+        <result column="is_transaction" property="isTransaction" jdbcType="INTEGER"/>
+        <result column="is_delete" property="isDelete" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+         m_topic, m_tags, m_keys, m_body, m_status, m_producer_group, send_count, send_result,
+        max_retry_count, transaction_id, is_transaction, is_delete, create_time, update_time
+    </sql>
+
+    <insert id="insertMsg" useGeneratedKeys="true" keyColumn="m_id" keyProperty="mID" parameterType="com.demo.model.rocketmq.RMQMessage">
+        insert into
+        t_rocketmq_message(<include refid="Base_Column_List"/>)
+        values (
+        #{mTopic},
+        #{mTags}, #{mKeys},
+        #{mBody}, #{mStatus},
+        #{mProducerGroup}, #{sendCount},
+        #{sendResult}, #{maxRetryCount},
+        #{transactionID}, #{isTransaction},
+        #{isDelete}, #{createTime},
+        #{updateTime}
+        )
+    </insert>
+
+    <update id="updateByPrimaryKeySelective">
+        update
+        t_rocketmq_message
+        <set >
+            <if test="createTime != null" >
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null" >
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="isDelete != null" >
+                is_delete = #{isDelete,jdbcType=INTEGER},
+            </if>
+            <if test="sendResult != null" >
+                send_result = #{sendResult,jdbcType=VARCHAR},
+            </if>
+            <if test="mTopic != null" >
+                m_topic = #{mTopic,jdbcType=VARCHAR},
+            </if>
+            <if test="mProducerGroup != null" >
+                m_producer_group = #{mProducerGroup,jdbcType=VARCHAR},
+            </if>
+            <if test="isTransaction != null" >
+                is_transaction = #{isTransaction,jdbcType=INTEGER},
+            </if>
+            <if test="transactionID != null" >
+                transaction_id = #{transactionID,jdbcType=VARCHAR},
+            </if>
+            <if test="mTags != null" >
+                m_tags = #{mTags,jdbcType=VARCHAR},
+            </if>
+            <if test="mStatus != null" >
+                m_status = #{mStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="mBody != null" >
+                m_body = #{mBody,jdbcType=VARCHAR},
+            </if>
+            <if test="sendCount != null" >
+                send_count = #{sendCount,jdbcType=INTEGER},
+            </if>
+            <if test="maxRetryCount != null" >
+                max_retry_count = #{maxRetryCount,jdbcType=INTEGER},
+            </if>
+        </set>
+        where m_id = #{mID,jdbcType=INTEGER}
+    </update>
+
+
+</mapper>

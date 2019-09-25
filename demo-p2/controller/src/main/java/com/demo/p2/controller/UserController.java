@@ -17,7 +17,7 @@ public class UserController {
     @Autowired(required = false)
     UserService userService;
 
-    @RequestMapping(value = "/query/all", method = RequestMethod.POST)
+    @RequestMapping(value = "/query/all", method = RequestMethod.GET)
     public List<User> queryAllUser() {
         return userService.queryAllUser();
     }

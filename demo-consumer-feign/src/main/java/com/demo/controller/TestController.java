@@ -24,8 +24,8 @@ public class TestController {
     }
 
     @RequestMapping(value = "/query/nos", method = RequestMethod.POST)
-    public List<BankNode> queryBankNodeList(@RequestBody QueryUnionBankRequest request){
-        return  demoProviderInterface.queryBankNodeList(request);
+    public List<BankNode> queryBankNodeList(@RequestBody QueryUnionBankRequest request) {
+        return demoProviderInterface.queryBankNodeList(request);
     }
 
 }

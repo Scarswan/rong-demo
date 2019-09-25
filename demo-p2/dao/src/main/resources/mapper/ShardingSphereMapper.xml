@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.p2.mapper.ShardingSphereMapper">
+
+    <resultMap id="BaseResultMap" type="com.demo.model.shardingsphere.User">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, name
+    </sql>
+
+    <insert id="insert">
+        insert into
+        t_user(id,name)
+        values(null,#{name})
+    </insert>
+
+    <update id="update">
+        update
+        t_user
+        set
+        name = #{name}
+        where
+        id = #{id}
+    </update>
+
+    <select id="getUser" resultType="com.demo.model.shardingsphere.User">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+        where id = #{id}
+    </select>
+
+    <select id="selectList" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+    </select>
+
+
+</mapper>

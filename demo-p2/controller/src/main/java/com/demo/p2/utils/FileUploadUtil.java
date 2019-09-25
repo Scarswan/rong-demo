@@ -30,6 +30,7 @@ public class FileUploadUtil {
 
     /**
      * 获取UUID
+     *
      * @return
      */
     public static String getUUID() {

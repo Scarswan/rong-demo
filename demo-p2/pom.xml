@@ -17,9 +17,22 @@
         <module>controller</module>
         <module>service</module>
         <module>dao</module>
+        <module>service2</module>
+        <module>dao2</module>
+        <module>controller2</module>
     </modules>
 
+    <properties>
+        <aspectjweaver.version>1.8.9</aspectjweaver.version>
+        <springframework.version>[4.3.6.RELEASE,5.0.0.M1)</springframework.version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.4.0</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -29,11 +42,6 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.51</version>
-        </dependency>
-        <dependency>
-            <groupId>com.demo</groupId>
-            <artifactId>demo-model</artifactId>
-            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.mybatis</groupId>

@@ -37,7 +37,4 @@ public class QueryUnionBankRequest {
     public List<String> fixList;
 
 
-
-
-
 }

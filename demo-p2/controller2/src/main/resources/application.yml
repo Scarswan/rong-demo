@@ -1,0 +1,51 @@
+server:
+  port: 8898
+
+spring:
+  application:
+    name: demo-c2
+    #  shardingsphere:
+    #    datasource:
+    #      master:
+    #        driver-class-name: com.mysql.jdbc.Driver
+    #        password: 123456
+    #        type: org.apache.commons.dbcp.BasicDataSource
+    #        url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&useSSL=false
+    #        username: root
+    #      names: test #,slave0,slave1
+    #      slave0:
+    #        driver-class-name: com.mysql.jdbc.Driver
+    #        password: 123456
+    #        type: org.apache.commons.dbcp.BasicDataSource
+    #        url: jdbc:mysql://localhost:3306/slave0?useUnicode=true&amp;characterEncoding=UTF-8&useSSL=false
+    #        username: root
+    #      slave1:
+    #        driver-class-name: com.mysql.jdbc.Driver
+    #        password: 123456
+    #        type: org.apache.commons.dbcp.BasicDataSource
+    #        url: jdbc:mysql://localhost:3306/slave1?useUnicode=true&amp;characterEncoding=UTF-8&useSSL=false
+    #        username: root
+    #    masterslave:
+    #      load-balance-algorithm-type: round_robin
+    #      master-data-source-name: master
+    #      name: ms
+    #      slave-data-source-names: slave0,slave1
+    props:
+      sql:
+        show: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&useSSL=false
+    driverclassname: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  freemarker:
+    suffix: .html
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8890/eureka/
+
+mybatis:
+  mapper-locations: classpath:mapper2/*.xml
+

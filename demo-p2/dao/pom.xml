@@ -11,6 +11,14 @@
 
     <artifactId>dao</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.demo</groupId>
+            <artifactId>demo-model</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <finalName>p2-dao</finalName>
         <plugins>

@@ -17,13 +17,14 @@
     </resultMap>
 
     <sql id="ALIAS_Column_List">
-    bn.node_code, bn.node_state, bn.bank_no, bn.city_code, bn.node_name, bn.bank_type, bn.create_time, bn.update_time
-  </sql>
+        bn.node_code, bn.node_state, bn.bank_no, bn.city_code, bn.node_name, bn.bank_type, bn.create_time,
+        bn.update_time
+    </sql>
 
     <sql id="Base_Column_List">
-    node_code, node_state, bank_no, city_code, node_name, hq_name, hq_node_code, super_code_flag,
-    bank_type, create_time, update_time
-  </sql>
+        node_code, node_state, bank_no, city_code, node_name, hq_name, hq_node_code, super_code_flag,
+        bank_type, create_time, update_time
+    </sql>
 
     <select id="selectAndList" resultMap="BaseResultMap">
         select

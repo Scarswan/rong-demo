@@ -10,19 +10,22 @@ public interface UserService {
 
     /**
      * 查询所有用户数据
+     *
      * @return
      */
     List<User> queryAllUser();
 
     /**
      * 删除指定用户
+     *
      * @param userId 用户id
      * @return
      */
-    JsonResult deleteAppointUser(Integer userId,Integer completely);
+    JsonResult deleteAppointUser(Integer userId, Integer completely);
 
     /**
      * 查询指定用户及其钱包数据
+     *
      * @param userId
      * @return
      */

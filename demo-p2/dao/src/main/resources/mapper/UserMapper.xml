@@ -14,14 +14,16 @@
     </resultMap>
 
     <sql id="User_Column_List">
-    user_id, user_name, user_pwd, user_remarks, user_state, wallet_id, is_delete, create_time
-  </sql>
+        user_id, user_name, user_pwd, user_remarks, user_state, wallet_id, is_delete, create_time
+    </sql>
 
     <sql id="User_Wallet_Column_As">
-     u.user_id AS UserId, user_name AS UserName, user_pwd AS UserPwd, user_remarks AS UserRemarks, user_state AS UserState,
-     w.wallet_id AS WalletId, is_delete AS IsDelete, wallet_balance AS WalletBalance, wallet_consumption AS WalletConsumption,
-     u.create_time AS UserCreateTime, w.create_time AS WalletCreateTime
-  </sql>
+        u.user_id AS UserId, user_name AS UserName, user_pwd AS UserPwd, user_remarks AS UserRemarks, user_state AS
+        UserState,
+        w.wallet_id AS WalletId, is_delete AS IsDelete, wallet_balance AS WalletBalance, wallet_consumption AS
+        WalletConsumption,
+        u.create_time AS UserCreateTime, w.create_time AS WalletCreateTime
+    </sql>
 
     <select id="selectAll" resultMap="UserResultMap">
         select

@@ -11,8 +11,8 @@
     </resultMap>
 
     <sql id="News_Column_List">
-    e_id, e_title, e_content, e_desc, create_time
-  </sql>
+        e_id, e_title, e_content, e_desc, create_time
+    </sql>
 
     <insert id="insert">
 
